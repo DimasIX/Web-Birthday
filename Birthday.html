@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');body {
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        background: linear-gradient(to right, #ff9966, #ff5e62);
+        padding: 0;
+        margin: 0;
+        color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .container {
+        width: 90%;
+        max-width: 400px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        color: #333;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        animation: bounce 1.5s infinite;
+    }
+    h3 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        animation: bounce 1.5s infinite;
+    }
+    p {
+        font-size: 1em;
+        margin-bottom: 20px;
+        animation: fadeInUp 1.5s ease-in-out;
+    }
+    #messages {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .message {
+        background: #ffe6e6;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-in-out forwards;
+    }
+    .message:nth-child(1) { animation-delay: 0.5s; }
+    .message:nth-child(2) { animation-delay: 1s; }
+    .message:nth-child(3) { animation-delay: 1.5s; }
+    .message:nth-child(4) { animation-delay: 2s; }
+    .message:nth-child(5) { animation-delay: 2.5s; }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Selamat Ulang Tahun! 🎂</h1>
+        <h3>Widya Pratiwi</h3>
+        <p>Ucapan spesial untukmu:</p>
+        <div id="messages"></div>
+    </div><script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var wishes = [
+            "Semoga panjang umur dan sehat selalu! 🎈",
+            "Semoga semua impianmu tercapai! 🌟",
+            "Hari ini adalah hari spesialmu, nikmatilah! 🎊",
+            "Tetaplah bahagia dan sukses selalu! 💖",
+            "Semoga tahun ini membawa lebih banyak kebahagiaan! 🎁"
+        ];
+        
+        var messageBox = document.getElementById("messages");
+        wishes.forEach((wish, index) => {
+            var message = document.createElement("div");
+            message.classList.add("message");
+            message.innerHTML = `<strong>🎶 </strong> ${wish}`;
+            messageBox.appendChild(message);
+        });
+    });
+</script>
+
+</body>
+</html>
